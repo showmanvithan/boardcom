@@ -15,7 +15,7 @@ export default function SwitchMode() {
   const current = theme === "system" ? resolvedTheme : theme;
 
   return (
-    <div className="absolute right-5 bottom-3 z-10">
+    <div className="fixed right-5 top-3 z-20">
       <Button
         size="icon-lg"
         variant="outline"

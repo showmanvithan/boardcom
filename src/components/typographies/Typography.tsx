@@ -26,11 +26,16 @@ type TypographyH5Props = {
   children: React.ReactNode
 }
 
-type TypographyP = {
+type TypographyPProps = {
   children: React.ReactNode
 }
 
 
+
+
+type TypographyP2Props = {
+  children: React.ReactNode
+}
 
 export function TypographyH1({ children }: TypographyH1Props) {
   return (
@@ -64,12 +69,21 @@ export function TypographyH5({children}: TypographyH5Props) {
   )
 }
 
-export function TypographyP({children}: TypographyH5Props) {
+export function TypographyP({children}: TypographyPProps) {
   return (
     <h5 className="leading-6 [&:not(:first-child)]:mt-6">
      {children}
     </h5>
   )
 }
+
+export function TypographyP2({children}: TypographyP2Props) {
+  return (
+    <h5 className="flex items-center gap-1 whitespace-nowrap leading-3 [&:not(:first-child)]:mt-6 text-xs">
+     {children}
+    </h5>
+  )
+}
+
 
 
