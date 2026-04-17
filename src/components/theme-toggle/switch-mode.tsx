@@ -1,0 +1,49 @@
+"use client";
+
+import { useTheme } from "next-themes";
+import { Button } from "../ui/button";
+import { useEffect, useState } from "react";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+
+export default function SwitchMode() {
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
+  const current = theme === "system" ? resolvedTheme : theme;
+
+  return (
+    <div className="absolute right-5 bottom-3 z-10">
+      <Button
+        size="icon-lg"
+        variant="outline"
+        onClick={() =>
+          setTheme(current === "dark" ? "light" : "dark")
+        }
+        className="relative overflow-hidden"
+      >
+        {/* Dark icon */}
+        <MdDarkMode
+          size={22}
+          className={`absolute transition-all duration-300 ease-in-out
+          ${current === "dark"
+            ? "rotate-0 scale-100 opacity-100"
+            : "-rotate-90 scale-0 opacity-0"
+          }`}
+        />
+
+        {/* Light icon */}
+        <MdLightMode
+          size={22}
+          className={`absolute transition-all duration-300 ease-in-out
+          ${current === "dark"
+            ? "rotate-90 scale-0 opacity-0"
+            : "rotate-0 scale-100 opacity-100"
+          }`}
+        />
+      </Button>
+    </div>
+  );
+}
