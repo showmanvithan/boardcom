@@ -1,3 +1,5 @@
+
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -7,7 +9,7 @@ const nextConfig: NextConfig = {
 };
 
 module.exports = {
-  allowedDevOrigins: ['e10d-150-129-89-165.ngrok-free.app'],
+  allowedDevOrigins: ['e10d-150-129-89-165.ngrok-free.app', 'opengraph.githubassets.com'],
 
 }
 

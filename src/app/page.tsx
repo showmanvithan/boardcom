@@ -21,6 +21,7 @@ import { motion } from "framer-motion";
 
 import { ProgressiveBlur } from "@/components/ui/progressive-blur"
 
+import ProjectCakes from "@/components/sections/projects";
 
 import {
   Tooltip,
@@ -252,6 +253,10 @@ export default function Home() {
 
               </div>
             </div>
+
+            <div className="md:p-5 p-2.5"/>
+
+            <ProjectCakes/>
           </div>
 
 

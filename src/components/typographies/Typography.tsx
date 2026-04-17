@@ -79,7 +79,7 @@ export function TypographyP({children}: TypographyPProps) {
 
 export function TypographyP2({children}: TypographyP2Props) {
   return (
-    <h5 className="flex items-center gap-1 whitespace-nowrap leading-3 [&:not(:first-child)]:mt-6 text-xs">
+    <h5 className="flex  gap-1 whitespace-nowrap leading-3 [&:not(:first-child)]:mt-6 text-xs">
      {children}
     </h5>
   )
