@@ -17,7 +17,6 @@ import { RiGitRepositoryCommitsFill } from "react-icons/ri";
 
 import SwitchMode from "@/components/theme-toggle/switch-mode";
 
-import { motion } from "framer-motion";
 
 import { ProgressiveBlur } from "@/components/ui/progressive-blur"
 
@@ -27,9 +26,6 @@ import SectionDivider from "@/components/ui/section-divider";
 
 import ExperienceCake from "@/components/sections/experience";
 
-import { RepoCard } from "@/components/sections/repoCard";
-
-import { repos }  from "@/components/sections/repos";
 
 import {
   Tooltip,
@@ -266,8 +262,10 @@ export default function Home() {
               <div className="p-1" />
 
               <ProjectCakes />
-
               
+              
+
+
 
               <div className="p-2" />
               <SectionDivider title="[⬢] EXP" />
