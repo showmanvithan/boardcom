@@ -57,7 +57,7 @@ export default function Home() {
     <>
       <SwitchMode />
       <div className="">
-        <div className="pb-100 bg-zinc-50 dark:bg-zinc-950">
+        <div className=" bg-zinc-50 dark:bg-zinc-950">
           <div className="z-10 absolute w-full p-5 bg-cyan-300 blur-3xl h-10 opacity-50 overflow-hidden" />
           <div
             style={{ fontFamily: '"Space Grotesk", sans-serif' }}
@@ -68,7 +68,7 @@ export default function Home() {
           <div className=" flex flex-col items-center bg-zinc-50 dark:bg-zinc-950 font-sans text-white  md:pt-30 pt-0 h-screen">
 
 
-            <div className=" md:w-3/4  w-full md:h-60">
+            <div className=" md:w-3/4  w-full pb-20">
               <div className="relative bg-zinc-300 dark:bg-zinc-700 w-full md:h-60 h-30 md:rounded-3xl rounded-none ">
                 <div className="absolute inset-0 w-full h-full overflow-hidden md:rounded-3xl rounded-none bg-[url('/twb_fire_tower_cover_art.webp')] bg-cover bg-center">
                   <ImageDithering
@@ -287,7 +287,10 @@ export default function Home() {
               <div className="p-3" />
               <SectionDivider title="EXPERIENCE" icon={MdWorkspacesFilled} />
               <div className="p-3" />
-              <ExperienceCake />
+              
+          
+                  <ExperienceCake />
+               
 
 
 
