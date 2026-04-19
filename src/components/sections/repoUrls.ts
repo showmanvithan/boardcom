@@ -16,7 +16,7 @@ export const repos: RepoUrls[] = baseUrl.map((url) => {
   const [, username, project] = pathname.split("/");
 
   return {
-    name: `${username}/${project}`,
+    name: `${project}`,
     description: "Repo description one",
     imageUrl: `https://opengraph.githubassets.com/1/${username}/${project}`,
     repoUrl: url,

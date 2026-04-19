@@ -3,6 +3,8 @@ import Image from "next/image";
 import { GrainGradient } from '@paper-design/shaders-react';
 import { useState, useEffect } from "react";
 
+import { FaRegFolderOpen } from "react-icons/fa6";
+import { MdWorkspacesFilled } from "react-icons/md";
 
 
 import { TypographyH1, TypographyH2, TypographyP, TypographyP2 } from "@/components/typographies/Typography";
@@ -25,6 +27,9 @@ import ProjectCakes from "@/components/sections/projects";
 import SectionDivider from "@/components/ui/section-divider";
 
 import ExperienceCake from "@/components/sections/experience";
+import { FiActivity } from "react-icons/fi";
+
+import { BsFile } from "react-icons/bs";
 
 
 import {
@@ -153,17 +158,27 @@ export default function Home() {
                 <div className="relative flex flex-1 m-5 h-full items-start flex-col gap-5  max-h-40  overflow-hidden">
 
 
-                  <div className="overflow-auto w-full">
+                  <div className="overflow-auto w-full ">
+
+
+                    <div className="absolute top flex flex-col  items-start   text-zinc-400 dark:bg-zinc-900 bg-zinc-100 z-100 w-full pb-3 ">
+                      <div className="flex flex-row items-center gap-2">
+                        <FiActivity />
+                        <p className="text-xs"> RECENT ACTIVITIES</p>
+                      </div>
+
+                    </div>
+
+
+                    <div className="p-3" />
 
 
 
 
 
                     <div className="absolute left-3.5 top-0 h-50 w-[1.5px] dark:bg-zinc-700 bg-zinc-300"></div>
-
-
-                    <div className="flex flex-col gap-10 ">
-
+                    <div className="p-5" />
+                    <div className="relative flex flex-col gap-10">
 
 
                       <div className="z-2">
@@ -238,9 +253,9 @@ export default function Home() {
 
 
 
-                  <div className=" pointer-events-none w-full absolute bottom-0  p-10 z-100 rounded-2xl overflow-hidden">
+                  {/* <div className=" pointer-events-none w-full absolute bottom-0  p-10 z-100 rounded-2xl overflow-hidden">
                     <ProgressiveBlur height="50%" position="bottom" />
-                  </div>
+                  </div> */}
 
 
                 </div>
@@ -256,20 +271,22 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="p-2" />
-              <SectionDivider title="[⬢] PROJECTS" />
+
+              <div className="p-3" />
+              <SectionDivider title="PROJECTS" icon={FaRegFolderOpen} />
 
               <div className="p-1" />
+              <div className="relative w-full">
+                <div className="absolute left h-full p-5 bg-linear-90 dark:from-transparent from-zinc-50 to-transparent dark:w-0 w-20 z-50" />
+                <div className="absolute right-0 h-full p-5 bg-gradient-to-l dark:from-transparent from-zinc-50 to-transparent dark:w-0 w-20 z-50" />
+                <ProjectCakes />
+              </div>
 
-              <ProjectCakes />
-              
-              
 
 
-
-              <div className="p-2" />
-              <SectionDivider title="[⬢] EXP" />
-              <div className="p-1" />
+              <div className="p-3" />
+              <SectionDivider title="EXPERIENCE" icon={MdWorkspacesFilled} />
+              <div className="p-3" />
               <ExperienceCake />
 
 
