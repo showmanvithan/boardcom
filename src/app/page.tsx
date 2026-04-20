@@ -40,6 +40,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
+import TechStackCake from "@/components/sections/techstack";
+
 const GitHubCalendar = dynamic(
   () =>
     import("react-github-calendar").then(
@@ -200,9 +202,14 @@ export default function Home() {
               <div className="p-3" />
               <SectionDivider title="EXPERIENCE" icon={MdWorkspacesFilled} />
               <div className="p-3" />
-
-
               <ExperienceCake />
+              <div className="p-3" />
+              <SectionDivider title="TECH STACK" icon={MdWorkspacesFilled} />
+              <div className="p-3" />
+
+              <TechStackCake/>
+              <div className="p-3" />
+
 
 
 
