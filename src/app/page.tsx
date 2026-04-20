@@ -7,7 +7,7 @@ import { FaRegFolderOpen } from "react-icons/fa6";
 import { MdWorkspacesFilled } from "react-icons/md";
 
 import GlassSurface from '@/components/GlassSurface'
-
+import { Skeleton } from "@/components/ui/skeleton"
 
 import { TypographyH1, TypographyH2, TypographyP, TypographyP2 } from "@/components/typographies/Typography";
 import { FaInstagram } from "react-icons/fa";
@@ -49,6 +49,15 @@ const GitHubCalendar = dynamic(
 );
 
 export default function Home() {
+
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
 
   const profileName = "Vignesh Thapanera";
@@ -153,11 +162,18 @@ export default function Home() {
 
               </div>
               <div className="p-3" />
-              <div className="dark:text-zinc-50 text-zinc-500 flex md:flex-row flex-col border dark:border-zinc-800  dark:bg-zinc-900 bg-zinc-100 rounded-3xl gap-2 ml-2.5 mr-2.5 ">
+              <div className="relative dark:text-zinc-50 text-zinc-500 flex md:flex-row flex-col border dark:border-zinc-800  dark:bg-zinc-900 bg-zinc-100 rounded-3xl gap-2 ml-2.5 mr-2.5 ">
+                {show && <> 
+                <div className="w-full h-full dark:bg-zinc-950 bg-zinc-400 absolute z-200 rounded-3xl"/>
+                <Skeleton className="h-full w-full rounded-3xl absolute z-200" />
+                </>
 
-                <ShowGhActivities/>
+                }
 
-                <div className=" lg:w-120 overflow-scroll dark:bg-zinc-950 bg-zinc-50 flex items-end justify-end p-5 rounded-3xl border dark:border-0">
+
+
+                <ShowGhActivities />
+                <div className=" lg:w-120 dark:bg-zinc-950 bg-zinc-50 flex items-end justify-end p-5 rounded-3xl border dark:border-0">
                   <GitHubCalendar
                     username="ascorbic"
                     blockSize={10}

@@ -34,14 +34,14 @@ export default function ShowGhActivities() {
 
     if (error)
         return (
-            <div className="bg-red-500 p-10 text-2xl text-white">
+            <div className=" p-10 text-2xl text-white">
                 ERROR LOADING DATA
             </div>
         );
 
     if (isLoading || !data)
         return (
-            <div className="bg-yellow-600 p-10 text-2xl text-white">
+            <div className=" p-10 text-2xl text-white">
                 Loading...
             </div>
         );
@@ -61,8 +61,8 @@ export default function ShowGhActivities() {
             eventType: "Push",
             repo: e.repo!.name,
             repo_id: e.repo!.id,
-            head: e.payload?.head?.slice(-6),
-            before: e.payload?.before?.slice(-6),
+            head: e.payload?.head?.slice(0,7),
+            before: e.payload?.before?.slice(0,7),
             createdAt: e.created_at,
             repoVisitUrl: `https://github.com/${e.repo?.name}`,
             visitHeadUrl: `https://github.com/${e.repo?.name}/commit/${e.payload?.head}`,
