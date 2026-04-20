@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { FaRegFolderOpen } from "react-icons/fa6";
 import { MdWorkspacesFilled } from "react-icons/md";
 
+import GlassSurface from '@/components/GlassSurface'
+
 
 import { TypographyH1, TypographyH2, TypographyP, TypographyP2 } from "@/components/typographies/Typography";
 import { FaInstagram } from "react-icons/fa";
@@ -30,7 +32,7 @@ import ExperienceCake from "@/components/sections/experience";
 import { FiActivity } from "react-icons/fi";
 
 import { BsFile } from "react-icons/bs";
-
+import ShowGhActivities from "@/components/sections/show-gh-activites";
 
 import {
   Tooltip,
@@ -50,7 +52,7 @@ export default function Home() {
 
 
   const profileName = "Vignesh Thapanera";
-  const navbarprofileName = "vgnsh.org";
+  const navbarprofileName = "vgnsh";
   const profileDescription = "Not a book club. A reading party. Read with friends to live music & curated playlists!"
 
   return (
@@ -58,13 +60,15 @@ export default function Home() {
       <SwitchMode />
       <div className="">
         <div className=" bg-zinc-50 dark:bg-zinc-950">
-          <div className="z-10 absolute w-full p-5 bg-cyan-300 blur-3xl h-10 opacity-50 overflow-hidden" />
+          <div className="z-10 absolute left-40 w-2/4 p-5 dark:bg-cyan-300  bg-cyan-300 blur-3xl h-10 dark:opacity-50  overflow-hidden transform rotate-160" />
           <div
             style={{ fontFamily: '"Space Grotesk", sans-serif' }}
             className={`left-1 antialiased flex z-10  w-full p-5 md:opacity-30 opacity-0 text-zinc-800 dark:text-emerald-100 items-center gap-1 fixed`}>
+
             <RiThunderstormsLine size={30} />
             <TypographyH2>{navbarprofileName}</TypographyH2>
           </div>
+
           <div className=" flex flex-col items-center bg-zinc-50 dark:bg-zinc-950 font-sans text-white  md:pt-30 pt-0 h-screen">
 
 
@@ -151,114 +155,7 @@ export default function Home() {
               <div className="p-3" />
               <div className="dark:text-zinc-50 text-zinc-500 flex md:flex-row flex-col border dark:border-zinc-800  dark:bg-zinc-900 bg-zinc-100 rounded-3xl gap-2 ml-2.5 mr-2.5 ">
 
-                {/* scroll blur here */}
-
-
-                {/* outer border */}
-                <div className="relative flex flex-1 m-5 h-full items-start flex-col gap-5  max-h-40  overflow-hidden">
-
-
-                  <div className="overflow-auto w-full ">
-
-
-                    <div className="absolute top flex flex-col  items-start   text-zinc-400 dark:bg-zinc-900 bg-zinc-100 z-100 w-full pb-3 ">
-                      <div className="flex flex-row items-center gap-2">
-                        <FiActivity />
-                        <p className="text-xs"> RECENT ACTIVITIES</p>
-                      </div>
-
-                    </div>
-
-
-                    <div className="p-3" />
-
-
-
-
-
-                    <div className="absolute left-3.5 top-0 h-50 w-[1.5px] dark:bg-zinc-700 bg-zinc-300"></div>
-                    <div className="p-5" />
-                    <div className="relative flex flex-col gap-10">
-
-
-                      <div className="z-2">
-                        <TypographyP2>
-                          <div className="bg-zinc-50 dark:bg-zinc-700 p-1.5 rounded-2xl  dark:border-zinc-600  border">
-                            <div className="text-zinc-400 dark:text-zinc-300 ">
-                              <RiGitRepositoryCommitsFill size={15} />
-                            </div>
-                          </div>
-                          <div className="ml-2">
-                            Created <strong>126</strong> commits in <strong>2</strong> repositories
-                          </div>
-                        </TypographyP2>
-                        <div className="flex  flex-col items-start text-xs ml-10">
-
-                          <p>vignexshh/folio <strong>23</strong> commits</p>
-
-                          <p>vignexshh/boardcom <strong>4</strong> commits</p>
-
-                        </div>
-
-                      </div>
-
-                      <div className="z-2">
-                        <TypographyP2>
-                          <div className="bg-zinc-50 dark:bg-zinc-700 p-1.5 rounded-2xl  dark:border-zinc-600 border">
-                            <div className="text-zinc-400 dark:text-zinc-300 ml-">
-                              <RiGitRepositoryCommitsFill size={15} />
-                            </div>
-                          </div>
-                          <div className="ml-2">
-                            Created <strong>32</strong> commits in <strong>1</strong> repositories
-                          </div>
-                        </TypographyP2>
-                        <div className="flex  flex-col items-start text-xs ml-10">
-
-                          <p>vignexshh/folio <strong>67</strong> commits</p>
-
-                          <p>vignexshh/boardcom <strong>52</strong> commits</p>
-
-                        </div>
-
-                      </div>
-
-                      <div className="z-2">
-                        <TypographyP2>
-                          <div className="bg-zinc-50 dark:bg-zinc-700 p-1.5 rounded-2xl  dark:border-zinc-600 border">
-                            <div className="text-zinc-400 dark:text-zinc-300 ml-">
-                              <RiGitRepositoryCommitsFill size={15} />
-                            </div>
-                          </div>
-                          <div className="ml-2">
-                            Created <strong>32</strong> commits in <strong>1</strong> repositories
-                          </div>
-                        </TypographyP2>
-                        <div className="flex  flex-col items-start text-xs ml-10">
-
-                          <p>vignexshh/folio <strong>67</strong> commits</p>
-
-                          <p>vignexshh/boardcom <strong>52</strong> commits</p>
-
-                        </div>
-
-                      </div>
-
-
-                    </div>
-
-                  </div>
-
-
-
-
-
-                  {/* <div className=" pointer-events-none w-full absolute bottom-0  p-10 z-100 rounded-2xl overflow-hidden">
-                    <ProgressiveBlur height="50%" position="bottom" />
-                  </div> */}
-
-
-                </div>
+                <ShowGhActivities/>
 
                 <div className=" lg:w-120 overflow-scroll dark:bg-zinc-950 bg-zinc-50 flex items-end justify-end p-5 rounded-3xl border dark:border-0">
                   <GitHubCalendar
@@ -287,10 +184,10 @@ export default function Home() {
               <div className="p-3" />
               <SectionDivider title="EXPERIENCE" icon={MdWorkspacesFilled} />
               <div className="p-3" />
-              
-          
-                  <ExperienceCake />
-               
+
+
+              <ExperienceCake />
+
 
 
 
