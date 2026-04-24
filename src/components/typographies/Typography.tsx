@@ -1,33 +1,49 @@
 
-import { Space_Grotesk, Geist_Mono } from "next/font/google";
+import { Sora, Noto_Sans_Mono } from "next/font/google";
+import {
+  GeistPixelSquare,
+  GeistPixelGrid,
+  GeistPixelCircle,
+  GeistPixelTriangle,
+  GeistPixelLine,
+} from "geist/font/pixel";
 
-
-const geistSans = Space_Grotesk({
-  variable: "--font-geist-sans",
+export const soraFont = Sora({
   subsets: ["latin"],
+  weight: ["100","200","300","400","500","600","700","800"],
+  variable: "--font-sora",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+export const Noto_Sans_Mono_Font = Noto_Sans_Mono({
   subsets: ["latin"],
+  weight: ["100","200","300","400","500","600","700","800"],
+  variable: "--font-sora",
+  display: "swap",
 });
+import { cn } from "@/lib/utils";
 
 type TypographyH1Props = {
   children: React.ReactNode
+  className?: string
 }
 type TypographyH2Props = {
   children: React.ReactNode
+  className?: string
 }
 type TypographyH4Props = {
   children: React.ReactNode
+  className?: string
 }
 
 type TypographyH5Props = {
   children: React.ReactNode
+  className?: string
 }
 
 type TypographyPProps = {
   children: React.ReactNode
+  className?: string
 }
 
 
@@ -37,9 +53,15 @@ type TypographyP2Props = {
   children: React.ReactNode
 }
 
-export function TypographyH1({ children }: TypographyH1Props) {
+export function TypographyH1({ children, className }: TypographyH1Props) {
   return (
-    <h1 className={` ${geistSans.variable} ${geistMono.variable} scroll-m-20 md:text-4xl text-3xl font-extrabold tracking-tight text-balance`}>
+    <h1
+      className={cn(
+        GeistPixelSquare.className,
+        "scroll-m-20 md:text-6xl text-4xl font-bold tracking-tight text-balance",
+        className
+      )}
+    >
       {children}
     </h1>
   )
@@ -47,7 +69,7 @@ export function TypographyH1({ children }: TypographyH1Props) {
 
 export function TypographyH2({ children }: TypographyH2Props) {
   return (
-    <h2 className={` ${geistSans.variable} ${geistMono.variable} scroll-m-20 sm:text-2xl lg:text-2xl font-semibold tracking-tight`}>
+    <h2 className={`${GeistPixelSquare.className} scroll-m-20 sm:text-2xl lg:text-2xl font-semibold tracking-tight`}>
       {children}
     </h2>
   )
@@ -55,7 +77,7 @@ export function TypographyH2({ children }: TypographyH2Props) {
 
 export function TypographyH4({children}: TypographyH4Props) {
   return (
-    <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+    <h4 className= {`${soraFont.className} scroll-m-20 text-xl font-semibold tracking-tight`}>
      {children}
     </h4>
   )
@@ -71,7 +93,7 @@ export function TypographyH5({children}: TypographyH5Props) {
 
 export function TypographyP({children}: TypographyPProps) {
   return (
-    <h5 className="leading-6 [&:not(:first-child)]:mt-6">
+    <h5 className={`${Noto_Sans_Mono_Font.className} leading-6 [&:not(:first-child)]:mt-6`}>
      {children}
     </h5>
   )

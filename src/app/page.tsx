@@ -42,6 +42,10 @@ import {
 
 import TechStackCake from "@/components/sections/techstack";
 
+import { soraFont } from "@/components/typographies/Typography";
+
+import Noise from "@/components/Noise";
+
 const GitHubCalendar = dynamic(
   () =>
     import("react-github-calendar").then(
@@ -69,20 +73,22 @@ export default function Home() {
   return (
     <>
       <SwitchMode />
-      <div className="">
-        <div className=" relative bg-zinc-50 dark:bg-zinc-950">
-          <video
-                  className="absolute inset-0 w-full h-full object-cover  opacity-15 blur hue-rotate-140"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="/halo_effect_scenic_naut.mp4" type="video/mp4" />
-                </video>
+      <div className="relative">
+        <div className="absolute h-full w-full z-10">
+          <Noise
+            patternSize={500}
+            patternScaleX={3.5}
+            patternScaleY={3.9}
+            patternRefreshInterval={2}
+            patternAlpha={25}
+          />
+        </div>
+
+        <div className=" relative bg-zinc-50 dark:bg-zinc-950 z-11">
+
           <div className="z-10 absolute left-40 w-2/4 p-5 dark:bg-cyan-300  bg-cyan-300 blur-3xl h-10 dark:opacity-50  overflow-hidden transform rotate-160" />
           <div
-            style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+            style={{ fontFamily: '"Sora", sans-serif' }}
             className={`left-1 antialiased flex z-10  w-full p-5 md:opacity-30 opacity-0 text-zinc-800 dark:text-emerald-100 items-center gap-1 fixed`}>
 
             <RiThunderstormsLine size={30} />
@@ -94,18 +100,10 @@ export default function Home() {
 
             <div className=" md:w-3/4  w-full pb-20">
               <div className="relative bg-zinc-300 dark:bg-zinc-700 w-full md:h-60 h-30 md:rounded-3xl rounded-none">
-                <video
-                  className="absolute inset-0 w-full h-full object-cover md:rounded-3xl rounded-none hue-rotate-140"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="/halo_effect_scenic_naut.mp4" type="video/mp4" />
-                </video>
+
                 <div className="absolute inset-0 w-full h-full overflow-hidden md:rounded-3xl rounded-none z-10 ">
 
-                  {/* <ImageDithering
+                  <ImageDithering
                     width={1920}
                     height={1080}
                     image="/twb_fire_tower_cover_art.webp"
@@ -119,7 +117,7 @@ export default function Home() {
                     colorSteps={2}
                     fit="cover"
 
-                  /> */}
+                  />
                 </div>
                 <div className="absolute -bottom-12.5 md:left-9 left-4 bg-amber-400 md:p-15 p-10 md:rounded-2xl rounded-2xl border-4 border-zinc-50 dark:border-none bg-[url('/pp.jpeg')] bg-cover bg-center z-20" />
 
@@ -139,7 +137,7 @@ export default function Home() {
 
                 </div>
                 <div className="flex flex-1 justify-end items-center ">
-                  <div className="dark:bg-zinc-900 flex  items-center gap-1 p-2 rounded-xl border dark:border-zinc-700 text-zinc-800 dark:text-zinc-50 bg-zinc-100">
+                  <div className="dark:bg-zinc-900 flex  items-center gap-1 p-1 rounded-lg border dark:border-zinc-700 text-zinc-800 dark:text-zinc-50 bg-zinc-100 z-200">
 
 
                     <Tooltip>

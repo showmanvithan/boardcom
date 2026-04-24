@@ -15,14 +15,14 @@ export default function SwitchMode() {
   const current = theme === "system" ? resolvedTheme : theme;
 
   return (
-    <div className="fixed right-5 top-3 z-20">
+    <div>
       <Button
         size="icon-lg"
         variant="outline"
         onClick={() =>
           setTheme(current === "dark" ? "light" : "dark")
         }
-        className="relative overflow-hidden"
+        className="relative overflow-hidden rounded-none border-dashed w-12 h-12 border-l border-r-0 border-t-0 border-b-0 border-zinc-800 dark:border-zinc-500"
       >
         {/* Dark icon */}
         <MdDarkMode

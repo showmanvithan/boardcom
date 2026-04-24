@@ -28,7 +28,7 @@ const fetcher = async (url: string) => {
 
 export default function ShowGhActivities() {
     const { data, error, isLoading } = useSWR<GitHubEvent[]>(
-        "https://api.github.com/users/vignexshh/events/public",
+        "https://api.github.com/users/showmanvithan/events/public",
         fetcher
     );
 
@@ -78,7 +78,7 @@ export default function ShowGhActivities() {
 
         <div className="relative flex flex-1 m-5 h-full items-start flex-col gap-5  max-h-40  overflow-hidden">
             <div className="overflow-auto w-full ">
-                <div className="absolute top flex flex-col  items-start   text-zinc-400 dark:bg-zinc-900 bg-zinc-100 z-100 w-full pb-3 ">
+                <div className="absolute top flex flex-col  items-start   text-zinc-400 dark:bg-black bg-zinc-100 z-100 w-full pb-2 ">
                     <div className="flex flex-row items-center gap-2">
                         <FiActivity />
                         <p className="text-xs"> RECENT PUBLIC ACTIVITIES</p>
@@ -105,9 +105,6 @@ export default function ShowGhActivities() {
                                                 className="underline hover:no-underline"
                                             >
                                                 {item.repo}
-
-    
-
                                             </a>
                                             
                                         </strong></p>

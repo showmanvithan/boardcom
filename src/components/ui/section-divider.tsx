@@ -15,7 +15,7 @@ export default function SectionDivider({
         <Icon className="text-lg" />
         {title || "New Section"}
       </p>
-      <div className="md:flex-[10] flex-[5] border-t m-5 dark:border-t-zinc-800 border-t-zinc-200" />
+      <div className="md:flex-10 flex-5 border-t m-5 dark:border-t-zinc-800 border-t-zinc-200" />
     </div>
   );
 }

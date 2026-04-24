@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Geist_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider"
+import { GeistPixelSquare } from "geist/font/pixel";
 
 import { TooltipProvider } from "@/components/ui/tooltip"
 
+import { Sora } from "next/font/google";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
-export const geistSans = Space_Grotesk({
-  variable: "--font-geist-sans",
+export const soraFont = Sora({
   subsets: ["latin"],
-});
-
-export const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["100","200","300","400","500","600","700","800"],
+  variable: "--font-sora",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -32,10 +29,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", geist.variable)}
+      className={cn("h-full", "antialiased")}
       suppressHydrationWarning
     >
-      <body className=" flex flex-col bg-zinc-50  dark:bg-zinc-950" >
+      <body 
+      className={`flex flex-col bg-zinc-50 dark:bg-zinc-950 ${soraFont.className}`}  
+      >
+
         <ThemeProvider
             attribute="class"
             defaultTheme="light"

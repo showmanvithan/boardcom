@@ -4,25 +4,46 @@ import { FaGithub } from "react-icons/fa";
 import { Marquee } from "../ui/marquee";
 import { ProgressiveBlur } from "../ui/progressive-blur";
 import { repos } from "./repoUrls";
-
 import Image from "next/image";
 
 export default function ProjectCakes() {
     const ghRepoDesc = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed amet ea quaerat labore beatae quas voluptate, quis doloribus incidunt dolor consectetur molestiae quibusdam quae, illum tempore! Maiores vero iste ullam.";
     const items = repos;
+    const colors = [
+        "#161f0e",
+        "#1f0e1d", 
+        "#0e0f1f", 
+        "#0e1f1e", 
+        "#1f0e19", 
+        "#1f0e0e"  
+    ];
+    const colorsbright = [
+    "#454C3E",
+    "#4C3E4A",
+    "#3E3F4C",
+    "#3E4C4B",
+    "#4C3E47",
+    "#4C3E3E"
+];
     return (
 
         <div className="relative flex md:flex-row flex-row gap-4 rounded-2xl overflow-hidden bg-zinc-50 dark:bg-zinc-950 pt-3 pb-3 ">
 
             <Marquee pauseOnHover className="[--duration:20s]">
-                {items.map((item,index) =>
+                {items.map((item, index) =>
                 (
-                    <div key={index} className="dark:text-zinc-50 text-zinc-900 flex md:flex-col overflow-hidden flex-col border dark:border-zinc-800  dark:bg-zinc-900 bg-zinc-100 rounded-3xl gap-2  w-70">
+                    // <div key={index} className={`dark:text-zinc-50 text-zinc-900 flex md:flex-col overflow-hidden flex-col border dark:border-zinc-800  dark:bg-zinc-900 bg-zinc-100 rounded-3xl gap-2  w-70`}>
+                    <div key={index} className={`dark:text-zinc-50 text-zinc-900 flex md:flex-col overflow-hidden flex-col border dark:border-zinc-800  dark:bg-zinc-900 bg-zinc-100 rounded-3xl gap-2  w-70`}
+                        style={{ backgroundColor: colors[index],
+                            borderColor: colorsbright[index]
+                         }}>
+
+
                         <div className="flex flex-1  md:p-7 p-4 text-left flex-col text-xs gap-5 justify-around">
                             <div className="flex flex-row items-center gap-2">
                                 <FaGithub size={25} />
-                                <div className="overflow-scroll"> 
-                                <TypographyH4>{item.name}</TypographyH4>
+                                <div className="overflow-scroll">
+                                    <TypographyH4>{item.name}</TypographyH4>
                                 </div>
                             </div>
                             <p className="text-left text-zinc-500 dark:text-zinc-400 max-w-120">{item.description}</p>
