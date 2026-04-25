@@ -76,7 +76,7 @@ export default function ShowGhActivities() {
     return (
 
         <div className="relative flex flex-1 pl-3 pr-3  h-full items-start flex-col gap-5  max-h-40  overflow-hidden border-dashed border bg-white dark:bg-zinc-900 border-zinc-600">
-            <div className="overflow-auto w-full ">
+            <div className="overflow-x-hidden overflow-auto w-full ">
                 <div className="absolute top flex flex-col  items-start   text-zinc-400 dark:bg-zinc-900 bg-white z-1 w-full pb-2 ">
                     <div className="flex flex-row items-center gap-2 pt-4">
                         <FiActivity />
