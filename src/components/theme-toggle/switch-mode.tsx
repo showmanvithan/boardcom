@@ -22,7 +22,7 @@ export default function SwitchMode() {
         onClick={() =>
           setTheme(current === "dark" ? "light" : "dark")
         }
-        className="relative overflow-hidden rounded-none border-dashed w-12 h-12 border-l border-r-0 border-t-0 border-b-0 border-zinc-800 dark:border-zinc-500"
+        className="relative overflow-hidden rounded-none border-dashed w-12  bg-zinc-200 dark:bg-black h-12 border-l border-r-0 border-t-0 border-b-0 border-zinc-800 dark:border-zinc-500"
       >
         {/* Dark icon */}
         <MdDarkMode

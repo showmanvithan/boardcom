@@ -1,5 +1,5 @@
 
-import { Sora, Noto_Sans_Mono } from "next/font/google";
+import { Sora, Noto_Sans_Mono, IBM_Plex_Mono } from "next/font/google";
 import {
   GeistPixelSquare,
   GeistPixelGrid,
@@ -16,6 +16,13 @@ export const soraFont = Sora({
 });
 
 export const Noto_Sans_Mono_Font = Noto_Sans_Mono({
+  subsets: ["latin"],
+  weight: ["100","200","300","400","500","600","700","800"],
+  variable: "--font-sora",
+  display: "swap",
+});
+
+export const IBM_Plex_Mono_Font = Noto_Sans_Mono({
   subsets: ["latin"],
   weight: ["100","200","300","400","500","600","700","800"],
   variable: "--font-sora",
@@ -42,6 +49,11 @@ type TypographyH5Props = {
 }
 
 type TypographyPProps = {
+  children: React.ReactNode
+  className?: string
+}
+
+type TypographyBaseTextProps = {
   children: React.ReactNode
   className?: string
 }
@@ -77,7 +89,7 @@ export function TypographyH2({ children }: TypographyH2Props) {
 
 export function TypographyH4({children}: TypographyH4Props) {
   return (
-    <h4 className= {`${soraFont.className} scroll-m-20 text-xl font-semibold tracking-tight`}>
+    <h4 className= {`${Noto_Sans_Mono_Font.className} scroll-m-20 text-xl font-semibold tracking-tight`}>
      {children}
     </h4>
   )
@@ -106,6 +118,21 @@ export function TypographyP2({children}: TypographyP2Props) {
     </h5>
   )
 }
+
+export function TypographyBaseText({children, className}: TypographyBaseTextProps) {
+  return (
+   <h5
+      className={cn(
+        IBM_Plex_Mono_Font.className,
+        "text-xs",
+        className
+      )}
+    >
+      {children}
+    </h5>
+  )
+}
+
 
 
 

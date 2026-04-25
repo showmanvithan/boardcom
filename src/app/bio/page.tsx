@@ -10,9 +10,9 @@ import ShowGhActivities from "@/components/sections/show-gh-activites";
 export default function Bio() {
     const navbarprofileName: string = "vgnsh";
     return (
-        <div className="bg-zinc-50 dark:bg-black h-screen flex justify-evenly">
+        <div className="bg-zinc-100 dark:bg-black h-screen flex justify-evenly">
 
-            <div className="flex flex-col gap-5 relative border-l border-r border-dashed bg-zinc-200 dark:bg-zinc-900 md:w-200 w-full p-5 border-zinc-800 overflow-hidden">
+            <div className="flex flex-col gap-5 relative border-l border-r border-dashed bg-zinc-50 dark:bg-zinc-900 md:w-200 w-full p-5 border-zinc-800 overflow-hidden">
                 <Noise
                     patternSize={1}
                     patternScaleX={1}

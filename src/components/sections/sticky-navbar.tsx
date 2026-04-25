@@ -6,7 +6,7 @@ import SwitchMode from "@/components/theme-toggle/switch-mode";
 export default function StickyNavbar() {
     const navbarprofileName: string = "vgnsh";
     return (
-                <div className="sticky top-0 left-0 w-full  border border-dashed bg-zinc-50 dark:bg-black/80 flex pl-5 border-zinc-800 dark:border-zinc-500 backdrop-blur z-100">
+                <div className="sticky top-0 left-0 w-full  border border-dashed bg-zinc-200 dark:bg-black/80 flex pl-5 border-zinc-800 dark:border-zinc-500 backdrop-blur z-100">
                     <div className="flex items-center flex-1 justify-start">
                         <div className="flex items-center justify-center gap-1">
                             <Image src="/bug-game.png" alt="vignesh nav bar icon" width={25} height={25} className="dark:invert" />

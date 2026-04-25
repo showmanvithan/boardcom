@@ -46,11 +46,8 @@ const experiences = [
 
 export default function ExperienceCake() {
     return (
-
         <div className="flex md:flex-row flex-col gap-2">
             <div className="flex-1 dark:bg-zinc-900 bg-white dark:text-zinc-100 text-zinc-900 border dark:border-zinc-800 border-zinc-200 rounded-3xl   p-5 ml-2 mr-2 overflow-scroll h-70">
-
-
                 <div className="flex flex-col overflow-scroll">
                     {experiences.map((exp, i) => (
                         <div key={i} className="flex gap-4 relative pb-5 last:pb-0">
@@ -63,8 +60,6 @@ export default function ExperienceCake() {
                                     <div className="w-px flex-1 dark:bg-zinc-700 bg-zinc-300 mt-1.5" />
                                 )}
                             </div>
-
-                            {/* Content column */}
                             <div className="flex-1 pt-0.5">
                                 <p className="text-sm font-semibold dark:text-zinc-100 text-zinc-900">{exp.company}</p>
                                 <p className="text-xs dark:text-zinc-400 text-zinc-500 mt-0.5">{exp.role}</p>
@@ -82,7 +77,6 @@ export default function ExperienceCake() {
                     ))}
                 </div>
             </div>
-
             <div className="flex flex-1 border-2 h-full ml-3 mr-3 rounded-3xl pt-5 pl-7 bg-white dark:bg-zinc-900 text-red-500 overflow-hidden max-h-70 items-center justify-start">
                 <CurvedLoop
                     marqueeText="🐜   🐜🐜   🐜🐜   🐜🐜   🐜✦"
@@ -92,9 +86,7 @@ export default function ExperienceCake() {
                     interactive
                     className=""
                 />
-                {/* <p className="dark:text-zinc-500 text-zinc-400 md:text-2xl text-xl">BRANDS WORKED WITH</p> */}
             </div>
-
         </div>
     );
 }
