@@ -99,7 +99,7 @@ export default function ShowGhActivities() {
                                 </div>
                                 <div className="flex flex-col gap-2 ml-2">
                                     <div className="flex text-wrap">
-                                        <TypographyBaseText className="text-zinc-900 dark:text-zinc-50 text-lg"> Performed <strong>{item.eventType}</strong> at <strong>
+                                        <TypographyBaseText className="text-zinc-900 dark:text-zinc-50 md:text-lg text-xs"> Performed <strong>{item.eventType}</strong> at <strong>
                                             <a
                                                 href={item.repoVisitUrl}
                                                 target="_blank"
