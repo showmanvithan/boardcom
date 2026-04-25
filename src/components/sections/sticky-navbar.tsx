@@ -3,6 +3,9 @@ import Image from "next/image";
 
 import SwitchMode from "@/components/theme-toggle/switch-mode";
 
+type NavBarProfileNameProps = {
+    name: string;
+}
 export default function StickyNavbar() {
     const navbarprofileName: string = "vgnsh";
     return (

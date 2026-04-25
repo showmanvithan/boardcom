@@ -6,13 +6,13 @@ import Noise from "@/components/Noise";
 
 import NameHeaderCake from "@/components/sections/name-header";
 import ShowGhActivities from "@/components/sections/show-gh-activites";
-
+import { GitHubCalendar } from "react-github-calendar";
 export default function Bio() {
     const navbarprofileName: string = "vgnsh";
     return (
-        <div className="bg-zinc-100 dark:bg-black h-screen flex justify-evenly">
+        <div className=" bg-zinc-100 dark:bg-black h-screen flex justify-evenly">
 
-            <div className="flex flex-col gap-5 relative border-l border-r border-dashed bg-zinc-50 dark:bg-zinc-900 md:w-200 w-full p-5 border-zinc-800 overflow-hidden">
+            <div className=" flex flex-col gap-5 border-l border-r border-dashed bg-zinc-50 dark:bg-zinc-900 md:w-200 w-full p-5 border-zinc-800 overflow-scroll">
                 <Noise
                     patternSize={1}
                     patternScaleX={1}
@@ -20,7 +20,7 @@ export default function Bio() {
                     patternRefreshInterval={1}
                     patternAlpha={15}
                 />
-                <StickyNavbar />
+                <StickyNavbar name="vgnsh" />
                 <HeaderCake
                     headerBgPath="./pp.jpeg"
                     headerProfilePath="/shipyard-anime-bg-webp.webp"
@@ -30,8 +30,21 @@ export default function Bio() {
                     secondName="thapanera"
                 />
 
-                <div className="dark:bg-black bg-white ">
-                    <ShowGhActivities/>
+                <div className="flex flex-col dark:bg-black bg-white ">
+                    <ShowGhActivities />
+                    <div className="flex items-center justify-center p-5 border border-dashed border-zinc-600 border-t-0">
+                        <GitHubCalendar
+                            username="ascorbic"
+                            blockSize={15}
+                            blockMargin={2}
+                            fontSize={12}
+                        />
+
+                    </div>
+
+
+                </div>
+                <div className="p-20 border border-dashed">
 
                 </div>
 
