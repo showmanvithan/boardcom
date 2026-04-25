@@ -16,7 +16,7 @@ export default function Bio() {
     return (
         <div className=" bg-zinc-100 dark:bg-black h-screen flex justify-evenly">
 
-            <div className=" flex flex-col gap-5 border-l border-r border-dashed bg-zinc-50 dark:bg-zinc-900 md:w-200 w-full p-5 border-zinc-800 overflow-scroll">
+            <div className=" flex flex-col gap-5 md:border-l md:border-r border-0 border-dashed bg-zinc-50 dark:bg-zinc-900 md:w-200 w-full p-5 border-zinc-800 overflow-scroll">
                 <Noise
                     patternSize={1}
                     patternScaleX={1}
