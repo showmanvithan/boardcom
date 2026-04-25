@@ -7,6 +7,10 @@ import Noise from "@/components/Noise";
 import NameHeaderCake from "@/components/sections/name-header";
 import ShowGhActivities from "@/components/sections/show-gh-activites";
 import { GitHubCalendar } from "react-github-calendar";
+import { TypographyBaseText } from "@/components/typographies/Typography";
+import SocialCake from "@/components/sections/social-profiles";
+import BrandsCake from "@/components/sections/brands";
+
 export default function Bio() {
     const navbarprofileName: string = "vgnsh";
     return (
@@ -29,6 +33,11 @@ export default function Bio() {
                     firstName="vignesh"
                     secondName="thapanera"
                 />
+                <div className="md:hidden visible">
+                <SocialCake/>
+                </div>
+
+                
 
                 <div className="flex flex-col dark:bg-black bg-white ">
                     <ShowGhActivities />
@@ -44,9 +53,9 @@ export default function Bio() {
 
 
                 </div>
-                <div className="p-20 border border-dashed">
 
-                </div>
+                <BrandsCake/>
+                
 
 
 

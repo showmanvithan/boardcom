@@ -97,7 +97,7 @@ export default function ShowGhActivities() {
                                         <RiGitRepositoryCommitsFill className="text-zinc-300" size={20} />
                                     
                                 </div>
-                                <div className="flex flex-col gap-2 ml-2">
+                                <div className="flex flex-col gap-2 md:ml-2 ml-1">
                                     <div className="flex text-wrap">
                                         <TypographyBaseText className="text-zinc-900 dark:text-zinc-50 md:text-lg text-xs"> Performed <strong>{item.eventType}</strong> at <strong>
                                             <a
@@ -113,7 +113,7 @@ export default function ShowGhActivities() {
                                     </div>
                                     <div className="flex  flex-col items-start text-xs gap-1">
                                         <div className="items-center flex flex-row gap-2">
-                                            <p>action created at</p> <div className="pl-1 pr-1 bg-zinc-200 dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 "> {item.createdAt}</div>
+                                            <TypographyBaseText>action created at</TypographyBaseText><div className="pl-1 pr-1 bg-zinc-200 dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 ">  <TypographyBaseText>{item.createdAt}</TypographyBaseText></div>
                                         </div>
                                         <div className="items-center flex flex-row gap-1">
                                             <TypographyBaseText> made changes from <strong> <a
