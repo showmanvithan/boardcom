@@ -1,3 +1,5 @@
+"use client";
+
 export type RepoUrls = {
   name: string;
   description: string;

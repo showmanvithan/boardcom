@@ -1,3 +1,4 @@
+"use client";
 import { BsAnthropic } from "react-icons/bs";
 import CurvedLoop from "../CurvedLoop";
 

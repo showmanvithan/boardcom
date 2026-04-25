@@ -1,3 +1,4 @@
+"use client";
 type HeaderCakeProps = {
     headerBgPath?: string;
     headerProfilePath?: string;

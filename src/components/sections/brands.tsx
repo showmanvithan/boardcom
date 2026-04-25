@@ -21,12 +21,12 @@ export default function BrandsCake() {
     ];
     return (
 
-        <div className="flex md:flex-row flex-col border border-dashed border-yellow-500 dark:bg-zinc-950 bg-white z-100">
-            <div className="flex flex-1 p-5">
-                <TypographyBaseText className={`text-xl text-yellow-500 ${GeistPixelSquare.className}`}>BRANDS I WORKED AS A MARKETER</TypographyBaseText>
+        <div className="flex md:flex-row flex-col border border-dashed border-zinc-600 dark:bg-zinc-950 bg-white z-100 ">
+            <div className="flex flex-1 pt-2 pl-3 pb-2 pr-3">
+                <TypographyBaseText className={`text-xl text-zinc-600 dark:text-zinc-50 ${GeistPixelSquare.className}`}>BRANDS I WORKED AS A MARKETER</TypographyBaseText>
 
             </div>
-            <div className="relative flex flex-2 md:border-l md:border-t-0 border-t border-dashed border-yellow-500 overflow-hidden items-center justify-center pt-2 text-yellow-500">
+            <div className="relative flex flex-2 md:border-l md:border-t-0 border-t border-dashed border-zinc-600 overflow-hidden items-center justify-center pt-2 text-zinc-600 dark:text-zinc-200">
                 <LogoLoop
                     logos={techLogos}
                     speed={30}

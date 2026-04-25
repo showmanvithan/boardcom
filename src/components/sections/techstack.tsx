@@ -1,3 +1,4 @@
+"use client";
 import DomeGallery from '@/components/DomeGallery';
 
 export default function TechStackCake() {

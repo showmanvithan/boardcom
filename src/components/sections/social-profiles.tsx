@@ -1,3 +1,4 @@
+"use client";
 
 import { TypographyBaseText } from "@/components/typographies/Typography";
 import { GeistPixelCircle } from "geist/font/pixel";

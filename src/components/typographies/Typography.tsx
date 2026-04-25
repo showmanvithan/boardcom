@@ -1,4 +1,4 @@
-
+"use client";
 import { Sora, Noto_Sans_Mono, IBM_Plex_Mono } from "next/font/google";
 import {
   GeistPixelSquare,

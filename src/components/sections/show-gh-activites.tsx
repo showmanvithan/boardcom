@@ -78,9 +78,11 @@ export default function ShowGhActivities() {
         <div className="relative flex flex-1 pl-3 pr-3  h-full items-start flex-col gap-5  max-h-40  overflow-hidden border-dashed border bg-white dark:bg-zinc-900 border-green-600">
             <div className="overflow-x-hidden overflow-auto w-full ">
                 <div className="absolute top flex flex-col  items-start text-green-600 dark:bg-zinc-900 bg-white z-1 w-full pb-2 ">
-                    <div className="flex flex-row items-center gap-2 pt-4">
-                        <FiActivity />
-                        <TypographyBaseText className="text-xs" >RECENT PUBLIC ACTIVITIES</TypographyBaseText>
+                    <div className="pt-3">
+                        <div className="flex flex-row items-center gap-1 border pt-1 pb-1 pl-2 pr-2 border-dashed border-green-600 rounded-full bg-zinc-950">
+                            <FiActivity />
+                            <TypographyBaseText className="text-xs" >RECENT PUBLIC ACTIVITIES</TypographyBaseText>
+                        </div>
                     </div>
                 </div>
                 <div className="p-3" />
@@ -92,16 +94,16 @@ export default function ShowGhActivities() {
                     {filteredData.map((item) => (
                         <div className="pb-10" key={item.repo_id}>
                             <TypographyP2>
-                                
-                                    <div className="flex items-center justify-center  w-12 h-12 min-w-12 min-h-12 rounded-full border border-dashed dark:border-green-500 border-green-600 bg-zinc-50 dark:bg-zinc-900">
-                                        <div className=" flex items-center justify-center bg-green-600 w-10 h-10 rounded-full"> 
+
+                                <div className="flex items-center justify-center  w-12 h-12 min-w-12 min-h-12 rounded-full border border-dashed dark:border-green-500 border-green-600 bg-zinc-50 dark:bg-zinc-900">
+                                    <div className=" flex items-center justify-center bg-green-600 w-10 h-10 rounded-full">
                                         <RiGitRepositoryCommitsFill className="text-zinc-50 dark:text-zinc-950" size={20} />
-                                        </div>
-                                    
+                                    </div>
+
                                 </div>
                                 <div className="flex flex-col gap-2 md:ml-2 ml-1">
                                     <div className="flex text-wrap">
-                                        <TypographyBaseText className="text-green-600 dark:text-green-500 md:text-lg text-xs wrap-break-word"> Performed <strong>{item.eventType}</strong> at <strong>
+                                        <TypographyBaseText className="text-green-600 dark:text-green-500 text-xs wrap-break-word"> Performed <strong>{item.eventType}</strong> at <strong>
                                             <a
                                                 href={item.repoVisitUrl}
                                                 target="_blank"

@@ -11,12 +11,14 @@ import { TypographyBaseText } from "@/components/typographies/Typography";
 import SocialCake from "@/components/sections/social-profiles";
 import BrandsCake from "@/components/sections/brands";
 
+import GradualBlur from "@/components/GradualBlur";
+
 export default function Bio() {
     const navbarprofileName: string = "vgnsh";
     return (
-        <div className=" bg-zinc-100 dark:bg-black h-screen flex justify-evenly">
+        <div className=" bg-white dark:bg-black h-screen flex justify-evenly overflow-x-hidden">
 
-            <div className=" flex flex-col gap-5 md:border-l md:border-r border-0 border-dashed bg-zinc-50 dark:bg-zinc-900 md:w-200 w-full p-5 border-zinc-800 overflow-scroll">
+            <div className=" flex flex-col gap-5 md:border-l md:border-r border-0 border-dashed bg-zinc-50 dark:bg-zinc-950 md:w-200 w-full p-5 border-zinc-800 overflow-scroll">
                 <Noise
                     patternSize={1}
                     patternScaleX={1}
@@ -34,10 +36,10 @@ export default function Bio() {
                     secondName="thapanera"
                 />
                 <div className="md:hidden visible">
-                <SocialCake/>
+                    <SocialCake />
                 </div>
 
-                
+
 
                 <div className="flex flex-col dark:bg-black bg-white ">
                     <ShowGhActivities />
@@ -54,8 +56,22 @@ export default function Bio() {
 
                 </div>
 
-                <BrandsCake/>
-                
+                <BrandsCake />
+
+                <div className="p-10"/>
+
+
+                <GradualBlur
+                    target="parent"
+                    position="bottom"
+                    height="3rem"
+                    strength={1}
+                    divCount={10}
+                    curve="bezier"
+                    exponential
+                    opacity={1}
+                />
+
 
 
 
