@@ -57,7 +57,7 @@ export default function ShowGhActivities() {
         })
         .slice(0, 3)
         .map((e) => ({
-            eventType: "Push",
+            eventType: "PUSH",
             repo: e.repo!.name,
             repo_id: e.repo!.id,
             head: e.payload?.head?.slice(0, 7),
