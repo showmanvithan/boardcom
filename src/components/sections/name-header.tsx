@@ -19,7 +19,7 @@ type NameFieldsProps = {
 
 export default function NameHeaderCake({firstName, secondName }: NameFieldsProps){
     return(
-        <div className="flex flex-row border border-dashed border-zinc-600 pl-3 items-center bg-zinc-50 dark:bg-zinc-950">
+        <div className="flex flex-row border border-dashed border-zinc-600 pl-3 items-center bg-white dark:bg-zinc-950 z-200">
                     <div className="flex flex-1 flex-col pb-2 pt-1 pl-1">
                         <TypographyH1>{firstName}</TypographyH1>
                         <TypographyH1 className={GeistPixelCircle.className} >{secondName}</TypographyH1>

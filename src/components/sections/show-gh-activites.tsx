@@ -75,9 +75,9 @@ export default function ShowGhActivities() {
 
     return (
 
-        <div className="relative flex flex-1 pl-3 pr-3  h-full items-start flex-col gap-5  max-h-40  overflow-hidden border-dashed border bg-white dark:bg-zinc-900 border-zinc-600">
+        <div className="relative flex flex-1 pl-3 pr-3  h-full items-start flex-col gap-5  max-h-40  overflow-hidden border-dashed border bg-white dark:bg-zinc-900 border-green-600">
             <div className="overflow-x-hidden overflow-auto w-full ">
-                <div className="absolute top flex flex-col  items-start   text-zinc-400 dark:bg-zinc-900 bg-white z-1 w-full pb-2 ">
+                <div className="absolute top flex flex-col  items-start text-green-600 dark:bg-zinc-900 bg-white z-1 w-full pb-2 ">
                     <div className="flex flex-row items-center gap-2 pt-4">
                         <FiActivity />
                         <TypographyBaseText className="text-xs" >RECENT PUBLIC ACTIVITIES</TypographyBaseText>
@@ -85,7 +85,7 @@ export default function ShowGhActivities() {
                 </div>
                 <div className="p-3" />
                 {/* line */}
-                <div className="absolute left-8 top-0 h-50 w-1 border-l border-zinc-600 border-dashed" />
+                <div className="absolute left-9.5 top-0 h-50 w-1 border-l border-green-600 border-dotted" />
                 <div className="p-5" />
                 <div className="relative flex flex-col gap-10 ">
 
@@ -93,13 +93,15 @@ export default function ShowGhActivities() {
                         <div className="pb-10" key={item.repo_id}>
                             <TypographyP2>
                                 
-                                    <div className="p-2 flex items-center justify-center bg-black w-10 h-10 rounded-full border border-dashed border-zinc-600">
-                                        <RiGitRepositoryCommitsFill className="text-zinc-300" size={20} />
+                                    <div className="flex items-center justify-center  w-13 h-13 rounded-full border border-dashed dark:border-green-500 border-green-600 bg-zinc-50 dark:bg-zinc-900">
+                                        <div className=" flex items-center justify-center bg-green-600 w-10 h-10 rounded-full"> 
+                                        <RiGitRepositoryCommitsFill className="text-zinc-50 dark:text-zinc-950" size={24} />
+                                        </div>
                                     
                                 </div>
                                 <div className="flex flex-col gap-2 md:ml-2 ml-1">
                                     <div className="flex text-wrap">
-                                        <TypographyBaseText className="text-zinc-900 dark:text-zinc-50 md:text-lg text-xs"> Performed <strong>{item.eventType}</strong> at <strong>
+                                        <TypographyBaseText className="text-green-600 dark:text-green-500 md:text-lg text-xs"> Performed <strong>{item.eventType}</strong> at <strong>
                                             <a
                                                 href={item.repoVisitUrl}
                                                 target="_blank"

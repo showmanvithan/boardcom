@@ -41,7 +41,7 @@ export default function Bio() {
 
                 <div className="flex flex-col dark:bg-black bg-white ">
                     <ShowGhActivities />
-                    <div className="flex items-center justify-center p-5 border border-dashed border-zinc-600 border-t-0">
+                    <div className="flex items-center justify-center p-5 bg-green-50 dark:bg-green-950/20 border border-dashed border-green-600 border-t-0">
                         <GitHubCalendar
                             username="ascorbic"
                             blockSize={15}

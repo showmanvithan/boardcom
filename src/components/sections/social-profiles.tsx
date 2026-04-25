@@ -13,7 +13,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 export default function SocialCake() {
     return (
-        <div className="bg-black p-0 border border-dashed border-zinc-600 flex flex-row">
+        <div className="dark:bg-black bg-white p-0 border border-dashed border-zinc-600 flex flex-row">
             <div className="flex flex-1 items-center justify-start pl-5"> 
 
             <TypographyBaseText>{`SOCIALS >`}</TypographyBaseText>
