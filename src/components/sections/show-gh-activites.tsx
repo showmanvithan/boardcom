@@ -85,7 +85,7 @@ export default function ShowGhActivities() {
                 </div>
                 <div className="p-3" />
                 {/* line */}
-                <div className="absolute left-9.5 top-0 h-50 w-1 border-l border-green-600 border-dotted" />
+                <div className="absolute left-9 top-0 h-50 w-1 border-l border-green-600 border-dotted" />
                 <div className="p-5" />
                 <div className="relative flex flex-col gap-10 ">
 
@@ -93,20 +93,20 @@ export default function ShowGhActivities() {
                         <div className="pb-10" key={item.repo_id}>
                             <TypographyP2>
                                 
-                                    <div className="flex items-center justify-center  w-13 h-13 rounded-full border border-dashed dark:border-green-500 border-green-600 bg-zinc-50 dark:bg-zinc-900">
+                                    <div className="flex items-center justify-center  w-12 h-12 min-w-12 min-h-12 rounded-full border border-dashed dark:border-green-500 border-green-600 bg-zinc-50 dark:bg-zinc-900">
                                         <div className=" flex items-center justify-center bg-green-600 w-10 h-10 rounded-full"> 
-                                        <RiGitRepositoryCommitsFill className="text-zinc-50 dark:text-zinc-950" size={24} />
+                                        <RiGitRepositoryCommitsFill className="text-zinc-50 dark:text-zinc-950" size={20} />
                                         </div>
                                     
                                 </div>
                                 <div className="flex flex-col gap-2 md:ml-2 ml-1">
                                     <div className="flex text-wrap">
-                                        <TypographyBaseText className="text-green-600 dark:text-green-500 md:text-lg text-xs"> Performed <strong>{item.eventType}</strong> at <strong>
+                                        <TypographyBaseText className="text-green-600 dark:text-green-500 md:text-lg text-xs wrap-break-word"> Performed <strong>{item.eventType}</strong> at <strong>
                                             <a
                                                 href={item.repoVisitUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="underline hover:no-underline"
+                                                className="underline hover:no-underline "
                                             >
                                                 {item.repo}
                                             </a>
