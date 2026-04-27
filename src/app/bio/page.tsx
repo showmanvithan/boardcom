@@ -28,7 +28,7 @@ export default function Bio() {
     return (
         <div className=" bg-white dark:bg-black h-screen flex justify-evenly overflow-x-hidden">
 
-            <div className=" flex flex-col gap-5 md:border-l md:border-r border-0 border-dashed bg-zinc-50 dark:bg-zinc-950 md:w-200 w-full p-5 border-zinc-800 overflow-scroll">
+            <div className=" flex flex-col gap-5 md:border-l md:border-r border-0 border-dashed bg-zinc-50 dark:bg-zinc-950 md:w-200 w-full p-5 border-zinc-800 overflow-scroll no-scroll">
                 <Noise
                     patternSize={1}
                     patternScaleX={1}
@@ -81,6 +81,7 @@ export default function Bio() {
                     curve="bezier"
                     exponential
                     opacity={1}
+                    className={"md:visible invisible"}
                 />
 
 
