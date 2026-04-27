@@ -79,7 +79,7 @@ export default function ShowGhActivities() {
             <div className="overflow-x-hidden overflow-auto w-full ">
                 <div className="absolute top flex flex-col  items-start text-green-600 dark:bg-zinc-900 bg-white z-1 w-full pb-2 ">
                     <div className="pt-3">
-                        <div className="flex flex-row items-center gap-1 border pt-1 pb-1 pl-2 pr-2 border-dashed border-green-600 rounded-full bg-zinc-950">
+                        <div className="flex flex-row items-center gap-1 border pt-1 pb-1 pl-2 pr-2 border-dashed border-green-600 rounded-full dark:bg-zinc-950 bg-green-50">
                             <FiActivity />
                             <TypographyBaseText className="text-xs" >RECENT PUBLIC ACTIVITIES</TypographyBaseText>
                         </div>

@@ -6,12 +6,22 @@ import Noise from "@/components/Noise";
 
 import NameHeaderCake from "@/components/sections/name-header";
 import ShowGhActivities from "@/components/sections/show-gh-activites";
-import { GitHubCalendar } from "react-github-calendar";
+
 import { TypographyBaseText } from "@/components/typographies/Typography";
 import SocialCake from "@/components/sections/social-profiles";
 import BrandsCake from "@/components/sections/brands";
 
 import GradualBlur from "@/components/GradualBlur";
+
+import dynamic from "next/dynamic"
+
+const GitHubCalendar = dynamic(
+  () =>
+    import("react-github-calendar").then(
+      (mod) => mod.GitHubCalendar
+    ),
+  { ssr: false }
+);
 
 export default function Bio() {
     const navbarprofileName: string = "vgnsh";
@@ -28,8 +38,8 @@ export default function Bio() {
                 />
                 <StickyNavbar name="vgnsh" />
                 <HeaderCake
-                    headerBgPath="./pp.jpeg"
-                    headerProfilePath="/shipyard-anime-bg-webp.webp"
+                    headerBgPath="image.png"
+                    headerProfilePath="shipyard-anime-bg-webp.webp"
                 />
                 <NameHeaderCake
                     firstName="vignesh"
