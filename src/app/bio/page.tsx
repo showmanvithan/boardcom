@@ -42,8 +42,8 @@ export default function Bio() {
                     headerProfilePath="shipyard-anime-bg-webp.webp"
                 />
                 <NameHeaderCake
-                    firstName="vignesh"
-                    secondName="thapanera"
+                    firstName="vithan"
+                    secondName="vignesh"
                 />
                 <div className="md:hidden visible">
                     <SocialCake />
@@ -67,7 +67,7 @@ export default function Bio() {
                 </div>
 
                 <BrandsCake />
-                <TechStackCake/>
+                <TechStackCake />
 
                 <div className="p-10" />
 

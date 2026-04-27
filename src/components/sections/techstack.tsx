@@ -2,25 +2,53 @@
 import { GiNestedHexagons } from "react-icons/gi";
 import { TypographyBaseText } from "../typographies/Typography";
 import { IconType } from "react-icons";
-import { RiNextjsFill } from "react-icons/ri";
+import { RiNextjsFill, RiReactjsFill } from "react-icons/ri";
+import { BiLogoFlask } from "react-icons/bi";
+import { SiFastapi } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
+import { SiPytorch } from "react-icons/si";
+import { SiTensorflow } from "react-icons/si";
+import { SiReact } from "react-icons/si";
+import { SiVitepress } from "react-icons/si";
+
+import { TbBrandCpp } from "react-icons/tb";
+import { FaRust } from "react-icons/fa";
+
+import { DiMysql } from "react-icons/di";
+
+import { BiLogoPostgresql } from "react-icons/bi";
+import { SiDocker } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import { SiNumpy } from "react-icons/si";
+import { SiPandas } from "react-icons/si";
+
+
+
+
 type TechStackVariables = {
-    label: string;
+    label?: string;
     icon: IconType;
 };
 
 export default function TechStackCake() {
 
     const items: TechStackVariables[] = [
-        { label: "nextJS", icon: RiNextjsFill },
-        { label: "nesxtJS", icon: RiNextjsFill },
-        { label: "nedtJS", icon: RiNextjsFill },
-        { label: "next2JS", icon: RiNextjsFill },
-        { label: "next4JS", icon: RiNextjsFill },
-        { label: "ne2xtJS", icon: RiNextjsFill },
-        { label: "next7JS", icon: RiNextjsFill },
-        { label: "next0JS", icon: RiNextjsFill },
-        { label: "ne6xtsJS", icon: RiNextjsFill },
-        { label: "nextJvS", icon: RiNextjsFill },
+        { label: "Flask", icon: BiLogoFlask },
+        { label: "FastAPI", icon: SiFastapi },
+        { label: "ExpressJS", icon: SiExpress },
+        { label: "PyTorch", icon: SiPytorch },
+        { label: "Tensorflow", icon: SiTensorflow },
+        { label: "Pandas", icon: SiPandas },
+        { label: "Numpy", icon: SiNumpy },
+        { label: "ReactJS", icon: SiReact },
+        { label: "NextJS", icon: RiNextjsFill },
+        { label: "Vite", icon: SiVitepress },
+        { label: "", icon: TbBrandCpp },
+        { label: "Rust", icon: FaRust },
+        { label: "MySQL", icon: DiMysql },
+        { label: "PostgreSQL", icon: BiLogoPostgresql },
+        { label: "Docker", icon: SiDocker },
+        { label: "AWS", icon: FaAws },
 
     ];
 
@@ -37,7 +65,7 @@ export default function TechStackCake() {
 
             <div className="flex flex-wrap flex-4 p-2 border-t border-dashed border-zinc-600 gap-1">
                 {items.map(({ label, icon: Icon }) => (
-                    <div key={label} className="text-zinc-700 dark:text-zinc-300 flex flex-row items-center justify-center border-dashed border border-zinc-600 dark:border-zinc-500 dark:bg-black p-3 pr-4 gap-1 bg-white">
+                    <div key={label} className="text-zinc-700 dark:text-zinc-300 flex flex-row items-center justify-center border-dashed border border-zinc-600 dark:border-zinc-500 dark:bg-black p-3 pr-3 gap-1 bg-white">
                         <Icon />
                         <TypographyBaseText className="text-xs">{label}</TypographyBaseText>
                     </div>
