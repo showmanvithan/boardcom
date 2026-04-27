@@ -53,7 +53,7 @@ export default function TechStackCake() {
     ];
 
     return (
-        <div className="border border-dashed border-zinc-600 flex flex-col">
+        <div className="border border-dashed border-zinc-600 flex flex-col bg-white dark:bg-zinc-950">
             <div className="flex flex-1 items-center justify-start pl-3 pt-3 pb-3">
                 <div className="text-blue-700 dark:text-blue-500 flex flex-row items-center justify-between border-dashed border border-blue-600 dark:border-blue-500 dark:bg-blue-500/10 rounded-full p-1 pr-2 gap-1 bg-blue-600/10">
                     <GiNestedHexagons />
@@ -65,7 +65,7 @@ export default function TechStackCake() {
 
             <div className="flex flex-wrap flex-4 p-2 border-t border-dashed border-zinc-600 gap-1">
                 {items.map(({ label, icon: Icon }) => (
-                    <div key={label} className="text-zinc-700 dark:text-zinc-300 flex flex-row items-center justify-center border-dashed border border-zinc-600 dark:border-zinc-500 dark:bg-black p-3 pr-3 gap-1 bg-white">
+                    <div key={label} className="text-zinc-700 dark:text-zinc-300 flex flex-row items-center justify-center border-dashed border border-zinc-600 dark:border-zinc-500 dark:bg-zinc-900 p-3 pr-3 gap-1 bg-zinc-50">
                         <Icon />
                         <TypographyBaseText className="text-xs">{label}</TypographyBaseText>
                     </div>

@@ -19,7 +19,7 @@ type NameFieldsProps = {
 
 export default function NameHeaderCake({firstName, secondName }: NameFieldsProps){
     return(
-        <div className="flex flex-row border border-dashed border-zinc-600 pl-3 items-center bg-white dark:bg-zinc-950 z-200">
+        <div className="relative flex flex-row border border-dashed border-zinc-600 pl-3 items-center bg-white dark:bg-zinc-950">
                     <div className="flex flex-1 flex-col pb-2 pt-1 pl-1">
                         <TypographyH1>{firstName}</TypographyH1>
                         <TypographyH1 className={GeistPixelCircle.className} >{secondName}</TypographyH1>
@@ -27,7 +27,7 @@ export default function NameHeaderCake({firstName, secondName }: NameFieldsProps
                     <div className="flex flex-1 flex-col  h-full w-full items-end">
 
                         <div className="flex flex-1 items-end md:opacity-100 opacity-0">
-                            <div className= "flex  items-center gap-1 p-1 border border-dashed border-l border-t border-b-0 border-r-0  border-zinc-600 text-zinc-800 dark:text-zinc-50 z-200">
+                            <div className= "flex  items-center gap-1 p-1 border border-dashed border-l border-t border-b-0 border-r-0  border-zinc-600 text-zinc-800 dark:text-zinc-50">
                                 <Tooltip>
                                     <TooltipTrigger>
                                         <FaInstagram size={35} />

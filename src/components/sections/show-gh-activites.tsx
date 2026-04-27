@@ -3,7 +3,7 @@
 import { FiActivity } from "react-icons/fi";
 import { RiGitRepositoryCommitsFill } from "react-icons/ri";
 import { TypographyBaseText, TypographyP2 } from "../typographies/Typography";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { GoLinkExternal } from "react-icons/go";
 import useSWR from "swr";
 
 type GitHubEvent = {
@@ -117,7 +117,7 @@ export default function ShowGhActivities() {
                                     </div>
                                     <div className="flex  flex-col items-start text-xs gap-1">
                                         <div className="items-center flex flex-row gap-2">
-                                            <TypographyBaseText>action created at</TypographyBaseText><div className="pl-1 pr-1 bg-zinc-200 dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 ">  <TypographyBaseText>{item.createdAt}</TypographyBaseText></div>
+                                            <TypographyBaseText>action created at</TypographyBaseText><div className="pl-1.5 pr-1.5 bg-zinc-200 dark:bg-black rounded-xl border border-zinc-300 dark:border-zinc-800 text-zinc-500 dark:text-zinc-200">  <TypographyBaseText>{item.createdAt}</TypographyBaseText></div>
                                         </div>
                                         <div className="items-center flex flex-row gap-1">
                                             <TypographyBaseText> made changes from <strong> <a
@@ -131,7 +131,7 @@ export default function ShowGhActivities() {
                                             </strong>
 
                                             </TypographyBaseText>
-                                            <FaExternalLinkAlt />
+                                            <GoLinkExternal />
                                             <TypographyBaseText>
                                                 to <strong>
 
@@ -149,7 +149,7 @@ export default function ShowGhActivities() {
                                                 </strong>
 
                                             </TypographyBaseText>
-                                            <FaExternalLinkAlt />
+                                            <GoLinkExternal />
                                         </div>
 
                                     </div>
