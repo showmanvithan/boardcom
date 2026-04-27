@@ -5,6 +5,8 @@ import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
+import { Lightbulb, LightbulbOff, Moon } from 'pixelarticons/react'
+
 export default function SwitchMode() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -25,8 +27,9 @@ export default function SwitchMode() {
         className="relative overflow-hidden rounded-none border-dashed w-12  bg-zinc-200 dark:bg-black h-12 border-l border-r-0 border-t-0 border-b-0 border-zinc-800 dark:border-zinc-500"
       >
         {/* Dark icon */}
-        <MdDarkMode
-          size={22}
+        <Moon
+          height={30}
+          width={30}
           className={`absolute transition-all duration-300 ease-in-out
           ${current === "dark"
             ? "rotate-0 scale-100 opacity-100"
@@ -35,8 +38,9 @@ export default function SwitchMode() {
         />
 
         {/* Light icon */}
-        <MdLightMode
-          size={22}
+        <Lightbulb
+          height={30}
+          width={30}
           className={`absolute transition-all duration-300 ease-in-out
           ${current === "dark"
             ? "rotate-90 scale-0 opacity-0"

@@ -2,6 +2,7 @@
 import LogoLoop from "../LogoLoop";
 import { TypographyBaseText } from "../typographies/Typography";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
 import {
   GeistPixelSquare,
@@ -11,6 +12,11 @@ import {
   GeistPixelLine,
 } from "geist/font/pixel";
 
+
+type TechStackVariables = {
+    name: string;
+    icon: Icon;
+}
 
 export default function BrandsCake() {
     const techLogos = [

@@ -12,15 +12,15 @@ import SocialCake from "@/components/sections/social-profiles";
 import BrandsCake from "@/components/sections/brands";
 
 import GradualBlur from "@/components/GradualBlur";
-
+import TechStackCake from "@/components/sections/techstack";
 import dynamic from "next/dynamic"
 
 const GitHubCalendar = dynamic(
-  () =>
-    import("react-github-calendar").then(
-      (mod) => mod.GitHubCalendar
-    ),
-  { ssr: false }
+    () =>
+        import("react-github-calendar").then(
+            (mod) => mod.GitHubCalendar
+        ),
+    { ssr: false }
 );
 
 export default function Bio() {
@@ -67,8 +67,9 @@ export default function Bio() {
                 </div>
 
                 <BrandsCake />
+                <TechStackCake/>
 
-                <div className="p-10"/>
+                <div className="p-10" />
 
 
                 <GradualBlur
