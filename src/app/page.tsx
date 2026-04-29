@@ -224,7 +224,7 @@ export default function Home() {
               <SectionDivider title="TECH STACK" icon={MdWorkspacesFilled} />
               <div className="p-3" />
 
-              <TechStackCake />
+
               <div className="p-3" />
 
 
