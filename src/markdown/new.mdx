@@ -1,0 +1,178 @@
+export const mdxdata = {
+    title: "New age mdx",
+    description: "My second post",
+    image: "/shipyard-anime-bg-webp.webp",
+    date: "14/05/2026",
+    topic: "new"
+}
+
+# The Brutal Truth About Building Software
+
+No fluff. No frameworks-of-the-week worship. Just what actually matters when you're shipping real things to real people.
+
+---
+
+## Why Most Code Dies in Staging
+
+Because the person who wrote it never talked to the person who runs it. That's it. That's the whole reason.
+
+### The Gap Between Dev and Prod
+
+It's not a technical problem — it's a *communication* failure dressed up in YAML. Every `works on my machine` is just someone who didn't ask the right questions.
+
+#### Root Causes
+
+Four things that kill production systems before launch:
+
+- Missing environment variable that everyone assumed was set
+- A `console.log` left in a loop that runs 10,000 times per request
+- Auth token hardcoded by an intern six months ago
+- `npm install` run as root in the Dockerfile
+
+#### Common Misconceptions
+
+###### Misconception #6
+
+**"If tests pass, it ships."** Tests only cover what you thought to test. Production covers everything else.
+
+---
+
+## What Good Architecture Actually Looks Like
+
+Not microservices. Not a monolith. **The thing that your team can reason about at 2am when it's on fire.**
+
+### Principles That Hold Up
+
+Strong opinions, held loosely:
+
+1. Data flows in one direction until it doesn't, and then you have a bug.
+2. Every abstraction is a bet that the thing being abstracted won't change.
+3. The best API you can write is the one nobody has to read the docs for.
+
+### Principles That Sound Good But Don't
+
+- "We'll refactor it later." *Later* is a mythical country. No one has a passport.
+- "Let's keep it flexible." Flexible means it does nothing well.
+- "We follow the SOLID principles." Cool. Does it deploy?
+
+---
+
+## The Stack
+
+Here's the actual setup that ships without drama:
+
+```bash
+# Init the project
+pnpm create next-app@latest my-app --typescript --tailwind --app
+
+# Add what you need, not what the YouTube tutorial used
+pnpm add drizzle-orm @neondatabase/serverless
+pnpm add -D drizzle-kit
+```
+
+A single route handler, no magic:
+
+```typescript
+// app/api/posts/route.ts
+export async function GET(req: Request) {
+  const posts = await db.select().from(schema.posts).orderBy(desc(schema.posts.createdAt))
+  return Response.json(posts)
+}
+```
+
+When you import something, be explicit about it:
+
+```typescript
+import { eq, desc, and } from 'drizzle-orm'
+import { posts, users } from '@/db/schema'
+```
+
+Inline code works too: call `getServerSession()` server-side, never in a client component, or you'll leak tokens.
+
+---
+
+## Performance Numbers That Actually Matter
+
+> The user doesn't care about your Lighthouse score. They care if the page loaded before they gave up.
+
+That's the whole framework. Everything else is vanity metrics.
+
+### Benchmarks Across Render Strategies
+
+| Strategy | TTFB | FCP | TTI | Complexity |
+|---|---|---|---|---|
+| Static (SSG) | ~30ms | ~200ms | ~400ms | Low |
+| Incremental (ISR) | ~80ms | ~300ms | ~600ms | Medium |
+| Server (SSR) | ~200ms | ~500ms | ~900ms | Medium |
+| Client only (CSR) | ~50ms | ~1200ms | ~2000ms | High |
+| Edge SSR | ~40ms | ~250ms | ~500ms | High |
+
+### What to Actually Optimize
+
+Not what's slow on your local SSD. What's slow on a **3G phone in Jakarta.** Run Lighthouse in mobile throttled mode and you'll immediately know what to fix.
+
+---
+
+## The Team Problem Is Bigger Than the Tech Problem
+
+**Shipping is a people problem.** Always was.
+
+You can have the most elegant codebase in the org and still miss every deadline because someone's blocked on a review, a deploy key, a decision that nobody will make.
+
+### What Kills Velocity
+
+- PR reviews that take 3 days because reviewers are in different timezones and nobody synced
+- *Consensus-driven architecture* — when you need 6 people to agree on a folder structure
+- `main` is broken and nobody owns it
+- Onboarding doc last updated when the team was 2 people and now you're 12
+
+### What Doesn't Kill Velocity But Gets Blamed
+
+Things that get blamed for slow shipping but aren't the real problem:
+
+- TypeScript (it saves time, people just hate reading errors)
+- Monorepos (tooling is annoying, the concept is fine)
+- "Too many meetings" (usually it's the *wrong* meetings, not the count)
+
+---
+
+## Reading the Error
+
+When something breaks, your first three moves:
+
+1. Read the **full** error message. Not just the first line. The whole stack trace.
+2. `git log --oneline -10` — what changed recently?
+3. Check if it's *your* code or a *dependency* that changed.
+
+Then and only then do you Google it.
+
+```bash
+# Check what changed in the last 24 hours
+git log --since="24 hours ago" --oneline
+
+# Diff against last known good commit
+git diff abc1234..HEAD -- src/
+```
+
+Use `console.error` in catch blocks, not `console.log`. They go to different streams and your logging infra will thank you.
+
+---
+
+## Where To Go From Here
+
+The honest map:
+
+- **Fundamentals** — HTTP, databases, the filesystem. Know these before you know any framework.
+- **One framework deeply** — not five frameworks shallowly. Pick Next.js or Remix or whatever, go deep.
+- **Deploy something real** — not a todo app. Something that handles other people's data.
+- **Read other people's code** — open source is the best free education available and most people don't use it.
+
+*Understanding* the tool matters more than *knowing* the tool. Anyone can follow a tutorial. Fewer people can debug what the tutorial produced when it breaks in production.
+
+---
+
+## Closing
+
+This document is a test of every MDX component this system supports. If you're reading this in a browser and the typography looks right — the dashes, the borders, the serif/headline tension — then the renderer works.
+
+**Ship the thing.** Iterate after.

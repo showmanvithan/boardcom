@@ -10,5 +10,8 @@ declare module '*.mdx' {
     title: string
     description: string
     image: string
+    date: string
+    topic: string
+    topic_colour: string
   }
 }
