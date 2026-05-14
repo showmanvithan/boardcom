@@ -13,5 +13,7 @@ declare module '*.mdx' {
     date: string
     topic: string
     topic_colour: string
+    author: string
+    author_avatar: string
   }
 }

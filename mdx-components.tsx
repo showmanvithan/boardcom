@@ -10,12 +10,14 @@ import {
 import { CopyButton } from '@/components/CopyButton';
 import {
   GeistPixelSquare,
-  GeistPixelGrid,
-  GeistPixelCircle,
-  GeistPixelTriangle,
-  GeistPixelLine,
+  // GeistPixelGrid,
+  // GeistPixelCircle,
+  // GeistPixelTriangle,
+  // GeistPixelLine,
 } from "geist/font/pixel";
-// ─── Fonts ────────────────────────────────────────────────────────────────────
+
+
+
 import { Button } from '@/components/ui/button';
 
 interface PreProps {
@@ -44,7 +46,7 @@ export const Stack_Sans_Headline_Font = Stack_Sans_Headline({
 })
 export const IBM_Plex_Mono_Font_Local = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["100","200","300","400","500", "600", "700"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   variable: "--font-sora",
   display: "swap",
 });
@@ -71,14 +73,14 @@ const mdxComponents = {
   // H2 — section dividers. Slightly softer, still structural.
   h2: ({ children }) => (
     <h2
-     className={`
+      className={`
         ${GeistPixelSquare.className}
         text-3xl sm:text-5xl
         font-bold tracking-tight
         dark:text-zinc-50 text-zinc-950
         pb-5
       `}
-      
+
     >
       {children}
     </h2>
@@ -181,39 +183,46 @@ const mdxComponents = {
 
   // Code block — full-width, terminal-style.
   pre: ({ children }: { children: React.ReactNode }) => {
-  const code =
-    typeof children === "string"
-      ? children
-      : (children as React.ReactElement<{ children: string }>)?.props?.children ?? "";
+    const code =
+      typeof children === "string"
+        ? children
+        : (children as React.ReactElement<{ children: string }>)?.props?.children ?? "";
 
-  return (
-    <div className="my-8 rounded-lg overflow-hidden border border-zinc-800 border-dashed">
-      <div className="flex items-center gap-2 px-4 py-3 dark:bg-zinc-800 bg-zinc-200 border-b border-dashed border-zinc-700">
-        <span className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors" />
-        <span className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors" />
-        <span className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors" />
-        <span className="flex-1 text-center text-xs text-zinc-800 dark:text-zinc-300 font-medium tracking-wide select-none">
-          editor
-        </span>
-        <CopyButton code={code} />
+    return (
+      <div className="my-8 rounded-lg overflow-hidden border border-dashed border-cyan-500/40 dark:bg-black/90 bg-white shadow-[0_0_25px_rgba(34,211,238,0.08)]">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-dashed border-cyan-500/30 dark:bg-cyan-500/5 bg-cyan-50 backdrop-blur-sm">
+          <span className="w-3 h-3 rounded-full border border-cyan-400 bg-cyan-400/20 shadow-[0_0_10px_rgba(34,211,238,0.35)]" />
+          <span className="w-3 h-3 rounded-full border border-cyan-400 bg-cyan-400/20 shadow-[0_0_10px_rgba(34,211,238,0.35)]" />
+          <span className="w-3 h-3 rounded-full border border-cyan-400 bg-cyan-400/20 shadow-[0_0_10px_rgba(34,211,238,0.35)]" />
+
+          <span className="flex-1 text-center text-[11px] uppercase tracking-[0.25em] dark:text-cyan-300 text-cyan-700 font-medium select-none">
+            editor
+          </span>
+
+          <CopyButton code={code} />
+        </div>
+
+        <pre
+          className={`
+      ${IBM_Plex_Mono_Font_Local.className}
+      text-sm leading-relaxed
+      dark:bg-black/95
+      bg-white
+      dark:text-cyan-200
+      text-zinc-800
+      p-5
+      overflow-x-auto
+      selection:bg-cyan-400/20
+      [&>code]:border-none
+      [&>code]:bg-transparent
+      [&>code]:p-0
+    `}
+        >
+          {children}
+        </pre>
       </div>
-      <pre
-        className={`
-          ${IBM_Plex_Mono_Font_Local.className}
-          text-sm leading-relaxed
-          dark:bg-zinc-900
-          bg-zinc-50 
-          text-zinc-600
-          p-5
-          overflow-x-auto
-          [&>code]:border-none [&>code]:bg-transparent [&>code]:p-0
-        `}
-      >
-        {children}
-      </pre>
-    </div>
-  );
-},
+    );
+  },
 
   // Blockquote — left rail mark, editorial pull-quote.
   blockquote: ({ children }) => (
