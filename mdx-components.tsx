@@ -3,8 +3,8 @@ import type { MDXComponents } from 'mdx/types'
 import Image from 'next/image'
 import {
   Instrument_Serif,
-  Stack_Sans_Text,
-  Stack_Sans_Headline,
+
+
   IBM_Plex_Mono
 } from 'next/font/google'
 import { CopyButton } from '@/components/CopyButton';
@@ -31,19 +31,6 @@ export const Ins_Serif = Instrument_Serif({
   display: 'swap',
 })
 
-export const Stack_Sans_Text_Font = Stack_Sans_Text({
-  subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600'],
-  variable: '--font-stack-sans-text',
-  display: 'swap',
-})
-
-export const Stack_Sans_Headline_Font = Stack_Sans_Headline({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-stack-sans-headline',
-  display: 'swap',
-})
 export const IBM_Plex_Mono_Font_Local = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -243,7 +230,7 @@ const mdxComponents = {
   ul: ({ children }) => (
     <ul
       className={`
-        ${Stack_Sans_Text_Font.className}
+        ${GeistPixelSquare.className}
         font-light text-base
         dark:text-zinc-300 text-zinc-700
         list-none
@@ -259,7 +246,7 @@ const mdxComponents = {
   ol: ({ children }) => (
     <ol
       className={`
-        ${Stack_Sans_Text_Font.className}
+        ${GeistPixelSquare.className}
         font-light text-base
         dark:text-zinc-300 text-zinc-700
         list-none
@@ -307,7 +294,7 @@ const mdxComponents = {
     <a
       href={href}
       className={`
-        ${Stack_Sans_Text_Font.className}
+        ${GeistPixelSquare.className}
         dark:text-zinc-100 text-zinc-900
         underline underline-offset-4 decoration-dashed
         dark:decoration-zinc-600 decoration-zinc-400
@@ -349,7 +336,7 @@ const mdxComponents = {
     <div className="overflow-x-auto my-8 border border-dashed dark:border-zinc-700 border-zinc-300">
       <table
         className={`
-          ${Stack_Sans_Text_Font.className}
+          ${GeistPixelSquare.className}
           w-full text-sm
           dark:text-zinc-300 text-zinc-700
           border-collapse
@@ -387,7 +374,7 @@ const mdxComponents = {
   th: ({ children }) => (
     <th
       className={`
-        ${Stack_Sans_Headline_Font.className}
+        ${GeistPixelSquare.className}
         text-xs font-semibold tracking-widest uppercase
         dark:text-zinc-400 text-zinc-500
         px-4 py-3
@@ -424,7 +411,7 @@ const mdxComponents = {
       {props.alt && (
         <span
           className={`
-            ${Stack_Sans_Text_Font.className}
+            ${GeistPixelSquare.className}
             absolute -bottom-8 left-0
             w-full text-center
             text-xs font-light tracking-wide
